@@ -1,11 +1,11 @@
 
 import { Button } from 'antd'
 
-function ButtonMenu() {
+function ButtonMenu({ textContent }) {
 
     return (
         <Button type="primary" shape="round">
-            Menu
+            {textContent}
         </Button>
     )
 }

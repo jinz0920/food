@@ -14,7 +14,7 @@ function ItemMenu({info}) {
     cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
     >
     <Meta title={info.nom} style={{paddingBottom:'5px'}}/>
-     <ButtonMenu/>
+     <ButtonMenu textContent={info.buttonText} />
   </Card>
   
     </div>
