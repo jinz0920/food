@@ -1,5 +1,6 @@
 import { Card} from 'antd';
 import ButtonMenu from '../Buttons/ButtonMenu';
+// import img from '../../img/01.jpg'
 
 
 
@@ -11,7 +12,7 @@ function ItemMenu({info}) {
         <Card 
     hoverable
     style={{ width: 240 }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+    cover={<img alt="example" src={info.src} />}
     >
     <Meta title={info.nom} style={{paddingBottom:'5px'}}/>
      <ButtonMenu textContent={info.buttonText} />

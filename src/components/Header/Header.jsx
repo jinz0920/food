@@ -1,6 +1,6 @@
 import React from 'react'
 import { Carousel } from 'antd';
-import img from '../../img/img4.jpg';
+
 
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
         <div>
             <Carousel autoplay>
                 <div>
-                    <img height='360px' width='100%' src={img} alt='ex' />
+                    <img height='360px' width='100%' src='img/01.jpg' alt='ex' />
                 </div>
                 <div>
                     <h3 style={contentStyle}>2</h3>
