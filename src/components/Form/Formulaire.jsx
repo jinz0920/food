@@ -1,9 +1,9 @@
-import { Form, Input, InputNumber, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 
 function Formulaire() {
   const layout = {
     labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
+    wrapperCol: { span: 10 },
   };
 
   /* eslint-disable no-template-curly-in-string */
@@ -20,7 +20,7 @@ function Formulaire() {
   /* eslint-enable no-template-curly-in-string */
 
  
-    const onFinish = (values: any) => {
+    const onFinish = (values) => {
       console.log(values);
     };
     return (

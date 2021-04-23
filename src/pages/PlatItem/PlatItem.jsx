@@ -1,12 +1,22 @@
 import React from 'react'
+import { Card } from 'antd';
+import ButtonMenu from '../../components/Buttons/ButtonMenu';
+
 
 function PlatItem({platInfo}) {
+    const { Meta } = Card;
     return (
-        <article>
-            <p>nom du plat:{platInfo.name}</p>
-            <p>prix:{platInfo.price}</p>
-            <p>description:{platInfo.description}</p>
-        </article>
+        <Card
+    hoverable
+    style={{ width: 240 }}
+    cover={<img alt="example" src={platInfo.picture} />}
+  >
+    <Meta title={platInfo.name} description={platInfo.price} />
+    <ButtonMenu textContent="commander" />
+  </Card>
+       
+           
+     
     )
 }
 

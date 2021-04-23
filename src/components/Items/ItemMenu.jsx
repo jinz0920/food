@@ -1,6 +1,5 @@
 import { Card} from 'antd';
 import ButtonMenu from '../Buttons/ButtonMenu';
-// import img from '../../img/01.jpg'
 
 
 

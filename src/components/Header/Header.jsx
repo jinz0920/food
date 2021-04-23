@@ -15,16 +15,16 @@ const Header = () => {
         <div>
             <Carousel autoplay>
                 <div>
-                    <img height='360px' width='100%' src='img/01.jpg' alt='ex' />
+                    <img height='360px' width='100%' src='img/img1.jpg' alt='ex' />
                 </div>
                 <div>
-                    <h3 style={contentStyle}>2</h3>
+                    <img height='360px' width='100%' src='img/img2.jpg' alt='ex' />
                 </div>
                 <div>
-                    <h3 style={contentStyle}>3</h3>
+                    <img height='360px' width='100%' src='img/img3.jpg' alt='ex' />
                 </div>
                 <div>
-                    <h3 style={contentStyle}>4</h3>
+                    <img height='360px' width='100%' src='img/img4.jpg' alt='ex' />
                 </div>
             </Carousel>
         </div>
