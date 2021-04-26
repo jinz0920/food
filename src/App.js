@@ -9,6 +9,7 @@ import Formulaire from './components/Form/Formulaire'
 import Plats from './pages/Plats/Plats'
 import FormLogin from './components/Form/FormLogin'
 import FormInscription from './components/Form/FormInscription.jsx'
+import Auth from './components/Security/Auth'
 
 
 
@@ -27,22 +28,24 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Navbar /* fetchCourses={fetchCourses} */ />
+      <Auth>
+        <Header />
+        <Navbar /* fetchCourses={fetchCourses} */ />
 
-      <Switch>
-        <Route path="/menu"><h1>Hello menu</h1></Route>
-        <Route path="/entrées"><h1>Hello entrées</h1></Route>
-        <Route path="/desserts"><h1>Hello desserts</h1></Route>
-        <Route path="/boissons"><h1>Hello boissons</h1></Route>
-        <Route path="/où"><Formulaire /></Route>
-        <Route path="/inscription"><FormInscription /></Route>
-        <Route path="/plats"><Plats /* plats={courses} */ /></Route>
-        <Route path="/login"><FormLogin /></Route>
-        <Route path="/" exact><ItemList /></Route>
-        {/* <Redirect to="/home" /> */}
-      </Switch>
-      <FooterAccueil />
+        <Switch>
+          <Route path="/menu"><h1>Hello menu</h1></Route>
+          <Route path="/entrées"><h1>Hello entrées</h1></Route>
+          <Route path="/desserts"><h1>Hello desserts</h1></Route>
+          <Route path="/boissons"><h1>Hello boissons</h1></Route>
+          <Route path="/où"><Formulaire /></Route>
+          <Route path="/inscription"><FormInscription /></Route>
+          <Route path="/plats"><Plats /* plats={courses} */ /></Route>
+          <Route path="/login"><FormLogin /></Route>
+          <Route path="/" exact><ItemList /></Route>
+          {/* <Redirect to="/home" /> */}
+        </Switch>
+        <FooterAccueil />
+      </Auth>
 
     </div>
   );

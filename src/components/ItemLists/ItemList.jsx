@@ -33,10 +33,10 @@ function ItemList() {
                 }
                 <Col span={16} className={classNames.Plan}>
                     <Row>
-                        <Col span={12} >
+                        <Col span={14} >
                             <Img/>
                         </Col>
-                        <Col span={8} className={classNames.Paristexte}>
+                        <Col span={10} className={classNames.Paristexte}>
                             <h3>Paris et Île de France</h3>
                             <p>Paris, Neuilly-sur-Seine, Levallois, Boulogne-Billancourt,
                             Issy-les-Moulineaux, Vanves, Vincennes, La Défense, Puteaux,

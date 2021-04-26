@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Form, Input, Button, message } from 'antd';
+import { useHistory } from "react-router-dom"
+import PubSub from 'pubsub-js'
 
 function FormLogin() {
     const layout = {
@@ -7,18 +9,20 @@ function FormLogin() {
         wrapperCol: { span: 10 },
     };
 
-    
+
     const validateMessages = {
         required: '${label} is required!',
         types: {
             email: '${label} is not a valid email!'
-           
+
         }
     };
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [error,setError]=useState('')
+    const [error, setError] = useState('')
+    const [token, setToken] = useState({})
+
 
     const onChangeHandler = (event) => {
         // console.dir(event)
@@ -30,9 +34,11 @@ function FormLogin() {
         setPassword(event.target.value)
     }
 
+    const history = useHistory();
+
     const onFinish = async () => {
         // event.preventDefault()
-        
+
         const response = await fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {
@@ -44,13 +50,27 @@ function FormLogin() {
             })
         })
         const data = await response.json()
-        if(data.error){
-            setError(data.message)
+        if (data.error) {
+            setError('Email ou Password erroné')
+        } else {
+            history.push("/")
         }
-        console.log(data)
-   
-     
+        setToken(data)
+
+        localStorage.setItem('token', data.token);
+        console.log(data.token)
+        PubSub.publish('token', data)
+
+
     }
+    // useEffect(() => {
+    //     const token2 = localStorage.getItem('token')
+    //     console.log(token2)
+    //     if (token2) {
+    //         setToken(token2)
+    //         PubSub.publish('token', token2)
+    //     }
+    // }, [])
 
 
     return (
@@ -63,7 +83,7 @@ function FormLogin() {
                     <Input type="password" id="password" value={password} onChange={onChangeHandlerPass} />
                 </Form.Item>
 
-                {error && <p style={{color:'red'}}>{error}</p> }
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
                     <Button type="primary" htmlType="submit">
                         se connecter
