@@ -63,7 +63,7 @@ function FormInscription() {
             body: JSON.stringify(
                 {
                     firstname: state.firstname,
-                    lastname: state.firstname,
+                    lastname: state.lastname,
                     email: state.email,
                     password: state.password
                 }
